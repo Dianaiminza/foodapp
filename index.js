@@ -10,7 +10,7 @@ var  mongoose =require ('mongoose');
 var  http =require ('http');
 var  Server =require('socket.io');
 
-mongoose.connect(process.env.MONGODB_URL ||'mongodb+srv://dbUser:Captain@cluster0.w11hf.mongodb.net/food?retryWrites=true&w=majority');
+mongoose.connect(process.env.MONGODB_URL ||'');
 const mongodbUrl = config.MONGODB_URL;
 mongoose .connect(mongodbUrl, {
   useNewUrlParser: true,
@@ -35,7 +35,7 @@ app.get('/api/config/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
 app.get('/api/config/google', (req, res) => {
-  res.send(process.env.GOOGLE_API_KEY || 'AIzaSyA_o7FM2m9ZPRceHDT9EDgrVtFIslIQHQ8');
+  res.send(process.env.GOOGLE_API_KEY || '');
 });
 app.post('/hooks/mpesa', (req, res) => {
   console.log('-----------Received M-Pesa webhook-----------');
